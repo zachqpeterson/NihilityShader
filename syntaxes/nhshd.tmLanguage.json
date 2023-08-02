@@ -1,0 +1,205 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Nihility Shader",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#parentheses"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"match": "\\b(if|else|switch|case|default|break|do|while|for|continue|return|discard|subroutine)\\b",
+					"name": "keyword.control.nhshd"
+				},
+				{
+					"match": "\\b(const|uniform|buffer|shared|attribute|varying|coherent|volatile|restrict|readonly|writeonly)\\b",
+					"name": "keyword.qualifier.nhshd"
+				},
+				{
+					"match": "\\b(layout)\\b",
+					"name": "keyword.qualifier.layout.nhshd"
+				},
+				{
+					"match": "\\b(in|out|inout|patch)\\b",
+					"name": "keyword.qualifier.io.nhshd"
+				},
+				{
+					"match": "\\b(centroid|flat|smooth|noperspective|sample)\\b",
+					"name": "keyword.qualifier.interpolation.nhshd"
+				},
+				{
+					"match": "\\b(lowp|mediump|highp|precision)\\b",
+					"name": "keyword.qualifier.precision.nhshd"
+				},
+				{
+					"match": "\\b(invariant|precise)\\b",
+					"name": "keyword.qualifier.other.nhshd"
+				},
+				{
+					"match": "\\b(void|bool|int|uint|float|double|atomic_uint)\\b",
+					"name": "keyword.type.basic.nhshd"
+				},
+				{
+					"match": "\\b(vec2|vec3|vec4|ivec2|ivec3|ivec4|bvec2|bvec3|bvec4|uvec2|uvec3|uvec4|dvec2|dvec3|dvec4)\\b",
+					"name": "keyword.type.vector.nhshd"
+				},
+				{
+					"match": "\\b(mat2|mat3|mat4|mat2x2|mat2x3|mat2x4|mat3x2|mat3x3|mat3x4|mat4x2|mat4x3|mat4x4|dmat2|dmat3|dmat4|dmat2x2|dmat2x3|dmat2x4|dmat3x2|dmat3x3|dmat3x4|dmat4x2|dmat4x3|dmat4x4)\\b",
+					"name": "keyword.type.matrix.nhshd"
+				},
+				{
+					"match": "\\b(sampler|samplerShadow)\\b",
+					"name": "keyword.type.sampler.nhshd"
+				},
+				{
+					"match": "\\b(sampler1D|sampler1DShadow|sampler1DArray|sampler1DArrayShadow|isampler1D|isampler1DArray|usampler1D|usampler1DArray)\\b",
+					"name": "keyword.type.sampler1D.nhshd"
+				},
+				{
+					"match": "\\b(sampler2D|sampler2DShadow|sampler2DArray|sampler2DArrayShadow|isampler2D|isampler2DArray|usampler2D|usampler2DArray|sampler2DRect|sampler2DRectShadow|isampler2DRect|usampler2DRect|sampler2DMS|isampler2DMS|usampler2DMS|sampler2DMSArray|isampler2DMSArray|usampler2DMSArray)\\b",
+					"name": "keyword.type.sampler2D.nhshd"
+				},
+				{
+					"match": "\\b(sampler3D|isampler3D|usampler3D)\\b",
+					"name": "keyword.type.sampler3D.nhshd"
+				},
+				{
+					"match": "\\b(samplerCube|samplerCubeShadow|isamplerCube|usamplerCube|samplerCubeArray|samplerCubeArrayShadow|isamplerCubeArray|usamplerCubeArray)\\b",
+					"name": "keyword.type.sampler-cube.nhshd"
+				},
+				{
+					"match": "\\b(samplerBuffer|isamplerBuffer|usamplerBuffer)\\b",
+					"name": "keyword.type.sampler-buffer.nhshd"
+				},
+				{
+					"match": "\\b(image1D|iimage1D|uimage1D|image1DArray|iimage1DArray|uimage1DArray)\\b",
+					"name": "keyword.type.image1D.nhshd"
+				},
+				{
+					"match": "\\b(image2D|iimage2D|uimage2D|image2DArray|iimage2DArray|uimage2DArray|image2DRect|iimage2DRect|uimage2DRect|image2DMS|iimage2DMS|uimage2DMS|image2DMSArray|iimage2DMSArray|uimage2DMSArray)\\b",
+					"name": "keyword.type.image2D.nhshd"
+				},
+				{
+					"match": "\\b(image3D|iimage3D|uimage3D)\\b",
+					"name": "keyword.type.image3D.nhshd"
+				},
+				{
+					"match": "\\b(imageCube|iimageCube|uimageCube|imageCubeArray|iimageCubeArray|uimageCubeArray)\\b",
+					"name": "keyword.type.image-cube.nhshd"
+				},
+				{
+					"match": "\\b(imageBuffer|iimageBuffer|uimageBuffer)\\b",
+					"name": "keyword.type.image-buffer.nhshd"
+				},
+				{
+					"match": "\\b(texture1D|texture1DArray|itexture1D|itexture1DArray|utexture1D|utexture1DArray)\\b",
+					"name": "keyword.type.texture1D.nhshd"
+				},
+				{
+					"match": "\\b(texture2D|texture2DArray|itexture2D|itexture2DArray|utexture2D|utexture2DArray|texture2DRect|itexture2DRect|utexture2DRect|texture2DMS|itexture2DMS|utexture2DMS|texture2DMSArray|itexture2DMSArray|utexture2DMSArray)\\b",
+					"name": "keyword.type.texture2D.nhshd"
+				},
+				{
+					"match": "\\b(texture3D|itexture3D|utexture3D)\\b",
+					"name": "keyword.type.texture3D.nhshd"
+				},
+				{
+					"match": "\\b(textureCube|itextureCube|utextureCube|textureCubeArray|itextureCubeArray|utextureCubeArray)\\b",
+					"name": "keyword.type.texture-cube.nhshd"
+				},
+				{
+					"match": "\\b(textureBuffer|itextureBuffer|utextureBuffer)\\b",
+					"name": "keyword.type.texture-buffer.nhshd"
+				},
+				{
+					"match": "\\b(subpassInput|isubpassInput|usubpassInput|subpassInputMS|isubpassInputMS|usubpassInputMS)\\b",
+					"name": "keyword.type.subpass.nhshd"
+				},
+				{
+					"match": "\\b(struct)\\b",
+					"name": "keyword.object"
+				},
+				{
+					"match": "\\b(true|false)\\b",
+					"name": "keyword.constant.nhshd"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.nhshd",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.nhshd",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"begin": "//",
+					"end": "\\n",
+					"beginCaptures": {
+						"0": {
+							"name": "comment.single-line.begin.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "comment.single-line.end.nhshd"
+						}
+					},
+					"name": "comment.single-line.nhshd"
+				},
+				{
+					"begin": "/\\*",
+					"end": "\\*/",
+					"beginCaptures": {
+						"0": {
+							"name": "comment.block.begin.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "comment.block.end.nhshd"
+						}
+					},
+					"name": "comment.block.nhshd"
+				}
+			]
+		},
+		"parentheses": {
+			"patterns": [
+				{
+					"begin": "\\(",
+					"end": "\\)",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.parenthesis.open.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.parenthesis.close.nhshd"
+						}
+					},
+					"name": "expression.group"
+				}
+			]
+		}
+	},
+	"scopeName": "source.nhshd"
+}
