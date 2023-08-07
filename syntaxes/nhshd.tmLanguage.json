@@ -12,6 +12,9 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#stages"
+		},
+		{
 			"include": "#strings"
 		}
 	],
@@ -133,6 +136,145 @@
 				{
 					"match": "\\b(true|false)\\b",
 					"name": "keyword.constant.nhshd"
+				}
+			]
+		},
+		"stages": {
+			"patterns": [
+				{
+					"name": "stage.config.nhshd",
+					"begin": "#CONFIG",
+					"end": "#CONFIG_END",
+					"beginCaptures": {
+						"0": {
+							"name": "stage.config.begin.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "stage.config.end.nhshd"
+						}
+					}
+				},
+				{
+					"name": "stage.vertex.nhshd",
+					"begin": "#VERTEX",
+					"end": "#VERTEX_END",
+					"beginCaptures": {
+						"0": {
+							"name": "stage.vertex.begin.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "stage.vertex.end.nhshd"
+						}
+					}
+				},
+				{
+					"name": "stage.control.nhshd",
+					"begin": "#CONTROL",
+					"end": "#CONTROL_END",
+					"beginCaptures": {
+						"0": {
+							"name": "stage.control.begin.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "stage.control.end.nhshd"
+						}
+					}
+				},
+				{
+					"name": "stage.evaluation.nhshd",
+					"begin": "#EVALUATION",
+					"end": "#EVALUATION_END",
+					"beginCaptures": {
+						"0": {
+							"name": "stage.evaluation.begin.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "stage.evaluation.end.nhshd"
+						}
+					}
+				},
+				{
+					"name": "stage.geometry.nhshd",
+					"begin": "#GEOMETRY",
+					"end": "#GEOMETRY_END",
+					"beginCaptures": {
+						"0": {
+							"name": "stage.geometry.begin.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "stage.geometry.end.nhshd"
+						}
+					}
+				},
+				{
+					"name": "stage.fragment.nhshd",
+					"begin": "#FRAGMENT",
+					"end": "#FRAGMENT_END",
+					"beginCaptures": {
+						"0": {
+							"name": "stage.fragment.begin.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "stage.fragment.end.nhshd"
+						}
+					}
+				},
+				{
+					"name": "stage.compute.nhshd",
+					"begin": "#COMPUTE",
+					"end": "#COMPUTE_END",
+					"beginCaptures": {
+						"0": {
+							"name": "stage.compute.begin.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "stage.compute.end.nhshd"
+						}
+					}
+				},
+				{
+					"name": "stage.task.nhshd",
+					"begin": "#TASK",
+					"end": "#TASK_END",
+					"beginCaptures": {
+						"0": {
+							"name": "stage.task.begin.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "stage.task.end.nhshd"
+						}
+					}
+				},
+				{
+					"name": "stage.mesh.nhshd",
+					"begin": "#MESH",
+					"end": "#MESH_END",
+					"beginCaptures": {
+						"0": {
+							"name": "stage.mesh.begin.nhshd"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "stage.mesh.end.nhshd"
+						}
+					}
 				}
 			]
 		},

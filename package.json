@@ -6,6 +6,10 @@
   "engines": {
     "vscode": "^1.80.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zachqpeterson/NihilityShader"
+  },
   "categories": [
     "Programming Languages"
   ],
@@ -21,5 +25,10 @@
       "scopeName": "source.nhshd",
       "path": "./syntaxes/nhshd.tmLanguage.json"
     }]
+  },
+  "configurationDefaults": {
+    "nhshd": {
+      "editor.semanticHighlighting.enabled": true
+    }
   }
 }
