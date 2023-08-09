@@ -3,6 +3,7 @@
   "displayName": "Nihility Shader",
   "description": "Nihility Shader",
   "version": "0.0.1",
+  "publisher": "Vacuum Tube Studio",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -14,11 +15,34 @@
     "Programming Languages"
   ],
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Example configuration",
+      "properties": {
+        "languageServerExample.maxNumberOfProblems": {
+          "scope": "resource",
+          "type": "number",
+          "default": 100,
+          "description": "Controls the maximum number of problems produced by the server."
+        },
+        "languageServerExample.trace.server": {
+          "scope": "window",
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Traces the communication between VS Code and the language server."
+        }
+      }
+    },
     "languages": [{
       "id": "nhshd",
       "aliases": ["Nihility Shader", "nhshd"],
       "extensions": [".nhshd"],
-      "configuration": "./language-configuration.json"
+      "configuration": "./nhshd.configuration.json"
     }],
     "grammars": [{
       "language": "nhshd",
@@ -30,5 +54,20 @@
     "nhshd": {
       "editor.semanticHighlighting.enabled": true
     }
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.9",
+    "@types/vscode": "^1.81.0",
+    "@vscode/test-electron": "^2.3.4",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^8.0.1"
+  },
+  "scripts": {
+    "prepublish": "tsc -p ./src",
+    "compile": "tsc -p ./src",
+    "watch": "tsc -w -p ./src",
+    "update-vscode": "node ./node_modules/vscode/bin/install"
   }
 }
